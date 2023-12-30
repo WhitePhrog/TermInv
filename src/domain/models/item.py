@@ -4,3 +4,4 @@ class Item:
     nome: str
     peso: int
     quantidade: int
+    
