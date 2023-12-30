@@ -24,17 +24,20 @@ class FerverAgua:
 
         return self.ferver_controller.ferver_panela(panela_com_agua)
 '''
-from domain.models.item import Database
-from domain.services import DatabaseFactory
+from domain.models import Inventario, Item
+from domain.services.controllers import EditarInventarioController
 
-class GetDatabase:
+class RemoverItem:
     def __init__(
             self,
-            database_factory: DatabaseFactory
+            editar_inventario_controller: EditarInventarioController,
+
     ):
-        self.database_factory = database_factory
+
+        self.editar_inventario_controller = editar_inventario_controller
 
     def call(
         self,
-    ) -> Database:
+    ) -> Inventario:
+        
         

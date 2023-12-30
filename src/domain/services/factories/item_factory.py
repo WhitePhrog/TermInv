@@ -1,10 +1,9 @@
-from domain.models.item import Item
-
-
+from domain.models import Item
 class ItemFactory:
     def call(
         self,
         nome: str,
         peso: int,
-    ) -> Item:
-        raise NotImplementedError()
+        quantidade: int,
+        ) -> Item:
+        raise NotImplementedError
