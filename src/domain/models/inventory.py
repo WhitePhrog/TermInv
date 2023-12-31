@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 @dataclass
-class Item:
+class Inventory:
+    id: int
     name: str
-    weight: int
-    amount: int
+    capacity: int

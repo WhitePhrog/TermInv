@@ -1,0 +1,2 @@
+from domain.services.repositories.inventory_repository import InventoryRepository
+from domain.services.repositories.item_repository import ItemRepository

@@ -1,3 +1,3 @@
-from domain.models import Invetario
+from domain.models import Inventory
 from domain.models import Item
-from domain.models import Database
+from domain.models import DatabaseSettings
