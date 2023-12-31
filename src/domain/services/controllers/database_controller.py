@@ -1,7 +1,7 @@
 class DatabaseController:
-    def call(self,
-             query: str,
-             params: tuple[dict] = (),
-            ):
+    def execute(
+        self,
+        query: str,
+        params: tuple[str] = (),
+    ) -> list[str]:
         raise NotImplementedError
-        

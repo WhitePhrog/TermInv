@@ -7,4 +7,4 @@ class InventarioFactory:
         nome: str,
         capacidade: int,
     ) -> Inventario:
-        raise NotImplementedError()
+        raise NotImplementedError

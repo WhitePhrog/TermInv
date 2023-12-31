@@ -1,6 +1,9 @@
-from domain.models.inventario import Inventario
+from domain.models import Inventario
 
 
 class EditarInventarioController:
-    def editar_inventario(self, inventario:Inventario) -> Inventario:
-        raise NotImplementedError()
+    def call(
+        self,
+        inventario: Inventario,
+    ) -> Inventario:
+        raise NotImplementedError

@@ -1,5 +1,10 @@
 from domain.models.item import Inventario, Item
-from domain.services.factories import InventarioFactory, DatabaseFactory, DatabaseControllerFactory
+from domain.services.factories import (
+    InventarioFactory,
+    DatabaseFactory,
+    DatabaseControllerFactory,
+)
+
 
 class VisualizarInventario:
     def __init__(self):
@@ -29,11 +34,10 @@ class VisualizarInventario:
         else:
             print(f"Inventário com o nome '{nome}' não encontrado.")
 
-
         print(f"Inventário escolhido: {inventario.nome}")
         print(f"Capacidade: {inventario.capacidade}")
         print("Itens:")
         for item in inventario.itens:
-            print(f"  - Nome: {item.nome}, Quantidade: {item.quantidade}, Peso: {item.peso}")
-
-
+            print(
+                f"  - Nome: {item.nome}, Quantidade: {item.quantidade}, Peso: {item.peso}"
+            )

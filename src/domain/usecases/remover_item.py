@@ -1,4 +1,4 @@
-'''
+"""
 from domain.models import Panela
 from domain.services.controllers import EncherDeAguaController, FerverController
 from domain.services.factories import PanelaFactory
@@ -23,21 +23,19 @@ class FerverAgua:
         )
 
         return self.ferver_controller.ferver_panela(panela_com_agua)
-'''
+"""
 from domain.models import Inventario, Item
 from domain.services.controllers import EditarInventarioController
 
+
 class RemoverItem:
     def __init__(
-            self,
-            editar_inventario_controller: EditarInventarioController,
-
+        self,
+        editar_inventario_controller: EditarInventarioController,
     ):
-
         self.editar_inventario_controller = editar_inventario_controller
 
     def call(
         self,
     ) -> Inventario:
-        
-        
+        print("oi")

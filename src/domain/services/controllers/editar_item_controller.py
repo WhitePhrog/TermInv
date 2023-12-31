@@ -1,6 +1,9 @@
-from domain.models.item import Item
+from domain.models import Item
 
 
 class EditarItemController:
-    def editar_item(self, item:Item) -> Item:
-        raise NotImplementedError()
+    def call(
+        self,
+        item: Item,
+    ) -> Item:
+        raise NotImplementedError
