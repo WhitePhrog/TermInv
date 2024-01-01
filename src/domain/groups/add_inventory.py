@@ -17,8 +17,11 @@ def add_inventory():
     database_controller = GetDatabaseController(injection.database_connection_factory)
     database_controller = database_controller.call()
     
-    char_name = input("\n----------------------------------------------\n"
-                      "Understood. What is your character's name?\n")
+    while True:
+        char_name = input("\n----------------------------------------------\n"
+                          "Understood. What is your character's name? (Maximum lenght of 45\n")
+        if len(char_name) > 45:
+            
     
     while True:
         try:

@@ -9,5 +9,4 @@ class DependencyInjection:
     inventory_repository: str
     item_factory: str
     item_repository: str
-    
-    
+     
