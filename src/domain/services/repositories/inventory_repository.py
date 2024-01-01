@@ -6,7 +6,7 @@ class InventoryRepository:
         raise NotImplementedError
     
     
-    def get_inventory_by_id(self, inventory: Inventory, database_controller: DatabaseController) -> Inventory:
+    def get_inventory_by_id(self, id: int, database_controller: DatabaseController) -> Inventory:
         raise NotImplementedError
     
     
@@ -14,10 +14,10 @@ class InventoryRepository:
         raise NotImplementedError
         
     
-    def delete_inventory(self, inventory: Inventory, database_controller: DatabaseController):
+    def delete_inventory(self, id: int, database_controller: DatabaseController):
         raise NotImplementedError
     
     
-    def edit_inventory(self, inventory: Inventory, target: str, substitute: str|int,database_controller: DatabaseController):
+    def edit_inventory(self, id: int, target: str, substitute: str|int, database_controller: DatabaseController):
         raise NotImplementedError
     
