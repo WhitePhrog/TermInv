@@ -1,0 +1,1 @@
+from infrastructure.inventory_repositories import InventoryRepositoryMySQL

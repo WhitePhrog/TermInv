@@ -14,4 +14,8 @@ class CoreDependencyInjectionFactoryJson(CoreDependencyInjectionFactory):
                 dependency_injections["database_connection_factory"],
                 dependency_injections["database_controller_factory"],
                 dependency_injections["database_controller"],
+                dependency_injections["inventory_factory"],
+                dependency_injections["inventory_repository"],
+                dependency_injections["item_factory"],
+                dependency_injections["item_repository_mysql"],
             )

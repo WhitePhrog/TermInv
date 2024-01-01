@@ -7,6 +7,9 @@ class InventoryRepositoryMySQL(InventoryRepository):
     def register_inventory(self, inventory: Inventory, database_controller: DatabaseController):
         database_controller.execute("INSERT INTO characters (name, capacity) VALUES (%s, %s)", (inventory.name, inventory.capacity))
         database_controller.commit()
+        print("\n----------------------------------------------\n"
+              "Inventory registered. It can now be\n"
+              "accessed through the main menu.")
 
 
     def get_inventory_by_id(self, id: int, database_controller: DatabaseController) -> Inventory:
