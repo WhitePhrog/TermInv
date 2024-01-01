@@ -10,8 +10,8 @@ class InventoryRepositoryMySQL(InventoryRepository):
 
 
     def get_inventory_by_id(self, id: int, database_controller: DatabaseController) -> Inventory:
-        inventory = database_controller.execute(f"SELECT name, capacity FROM characters WHERE id={id}")
-        return Inventory(**inventory)
+        selected_inventory = database_controller.execute(f"SELECT name, capacity FROM characters WHERE id = %s", (id))
+        return Inventory(**selected_inventory)
     
     
     def get_all_inventories(self, database_controller: DatabaseController):
@@ -19,11 +19,12 @@ class InventoryRepositoryMySQL(InventoryRepository):
         return [Inventory(**inventory_data) for inventory_data in inventories]
     
     
-    def delete_inventory(self, id: int, database_controller: DatabaseController):
-        database_controller.execute(f"DELETE FROM characters WHERE id={id}")
+    def delete_inventory(self, inventory: Inventory, database_controller: DatabaseController):
+        database_controller.execute("DELETE FROM characters WHERE id = %s", (inventory.id))
+        database_controller.execute("DELETE FROM items WHERE character_id = %s", (inventory.id))
         database_controller.commit()
         
         
-    def edit_inventory(self, id: int, target: str, substitute: str | int, database_controller: DatabaseController):
-        database_controller.execute(f"UPDATE characters SET {target}={substitute} WHERE id={id}")
+    def edit_inventory(self, inventory: Inventory, target: str, substitute: str | int, database_controller: DatabaseController):
+        database_controller.execute("UPDATE characters SET %s = %s WHERE id = %s", (target, substitute, inventory.id))
         database_controller.commit()
