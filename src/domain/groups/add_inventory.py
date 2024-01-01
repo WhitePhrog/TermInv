@@ -2,14 +2,11 @@ from infrastructure.core_bridge_adapters import CoreBridgeAdapter
 from infrastructure.core_dependency_injection_factories import CoreDependencyInjectionFactoryJson
 from domain.usecases.create_inventory import CreateInventory
 from domain.usecases.get_injection import GetInjection
-from infrastructure.inventory_factories import InventoryFactoryFromInput
 from infrastructure.inventory_repositories import InventoryRepositoryMySQL
-from domain.models import Inventory
 from domain.usecases.get_database_controller import GetDatabaseController
-import json
 
 
-def add_inventory():
+def AddInventory():
     core_dependency_injection_factory = CoreDependencyInjectionFactoryJson()
     core_bridge = CoreBridgeAdapter()
     get_injection = GetInjection(core_bridge, core_dependency_injection_factory)
@@ -21,6 +18,9 @@ def add_inventory():
         char_name = input("\n----------------------------------------------\n"
                           "Understood. What is your character's name? (Maximum lenght of 45\n")
         if len(char_name) > 45:
+            print("\n----------------------------------------------\n"
+                  "Choose a name under 45 characters.")
+        break
             
     
     while True:
@@ -43,11 +43,11 @@ def add_inventory():
                             "If not, we will redirect you to our main menu.\n"
                             "[1] Yes.\n"
                             "[2] No.\n"))
-            if choice > 0 and choice < 3:
-                break
-            else:
+            if choice < 0 or choice > 3:
                 print("\n----------------------------------------------\n"
                       "Please, choose one the options presented.")
+                continue
+            break
         except ValueError:
             print("\n----------------------------------------------\n"
                   "Please, select one of the options presented as a number.")
@@ -58,3 +58,5 @@ def add_inventory():
     else:
         print("\n----------------------------------------------\n"
               "Understood. Going back to the main menu.")
+        
+AddInventory()

@@ -1,12 +1,14 @@
 [tool.poetry]
-name = "terminv"
+name = "src"
 version = "0.1.0"
-description = "Terminal inventory system for D&D"
+description = ""
 authors = ["Octávio Hernandez <octaviocordeiro0@gmail.com>"]
 readme = "README.md"
+packages = [{ include = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+
 
 
 [build-system]
